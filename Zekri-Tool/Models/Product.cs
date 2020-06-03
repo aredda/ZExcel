@@ -83,11 +83,13 @@ namespace Zekri_Tool.Models
 
 			for (int i = 3; i < data.Count; i++)
 			{
-				this.Keywords += data[i];
+				if (data[i] == "")
+					break;
 
-				if (i != data.Count - 1)
-					this.Keywords += ", ";
+				this.Keywords += data[i] + ",";
 			}
+
+			this.Keywords = Keywords.TrimEnd(',');
 		}
 	}
 }

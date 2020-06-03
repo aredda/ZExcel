@@ -41,7 +41,10 @@
                     </DockPanel>
                 </StackPanel>
                 <StackPanel Style="{StaticResource form_group}" Orientation="Vertical">
-                    <Label Style="{StaticResource lbl_form}" Content="Keywords:" />
+                    <DockPanel LastChildFill="False">
+                        <Label Style="{StaticResource lbl_form}" Content="Keywords:" />
+                        <Label x:Name="lbl_kwcount" DockPanel.Dock="Right" Content="Keyword Count: 0" Foreground="{StaticResource clr_danger}" />
+                    </DockPanel>
                     <RichTextBox x:Name="txt_keywords" Padding="5" Width="300" Height="75" Block.LineHeight="6" />
                 </StackPanel>
             </StackPanel>
@@ -51,7 +54,7 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="*" />
                         <DataGridTextColumn Header="Sub Title" Binding="{Binding SubTitle}" Width="*" />
-                        <DataGridTextColumn Header="Language" Binding="{Binding Description.Language}" Width="*" />
+                        <!--<DataGridTextColumn Header="Language" Binding="{Binding Description.Language}" Width="*" />-->
                         <DataGridTextColumn Header="Description" Binding="{Binding Description.PreviewContent}" Width="*" />
                         <DataGridTextColumn Header="Keywords" Binding="{Binding Keywords}" Width="*" />
                     </DataGrid.Columns>

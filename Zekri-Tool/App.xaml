@@ -30,6 +30,7 @@
         <!-- Colors -->
         <SolidColorBrush x:Key="clr_main">#2269d6</SolidColorBrush>
         <SolidColorBrush x:Key="clr_secondary">#ef6c00</SolidColorBrush>
+        <SolidColorBrush x:Key="clr_danger">#c62828</SolidColorBrush>
         <SolidColorBrush x:Key="clr_muted">#6d6d6d</SolidColorBrush>
         <SolidColorBrush x:Key="clr_dark">#1b1b1b</SolidColorBrush>
         <SolidColorBrush x:Key="clr_light">#e3e3e3</SolidColorBrush>

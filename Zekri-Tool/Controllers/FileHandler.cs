@@ -85,6 +85,7 @@ namespace Zekri_Tool.Controllers
             if (isCreated) book.Save();
             else book.SaveAs(this.fileName);
             // close app
+            book.Close();
             app.Quit();
         }
 
@@ -133,6 +134,7 @@ namespace Zekri_Tool.Controllers
                 y++;
             }
             // close
+            book.Close();
             app.Quit();
             // return
             return data;

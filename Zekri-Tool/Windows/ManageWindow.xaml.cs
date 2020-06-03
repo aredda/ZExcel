@@ -92,6 +92,7 @@ namespace Zekri_Tool.Windows
             this.btn_cancel.MouseDown += (object s, MouseButtonEventArgs args) => { SelectedProduct = null; SetInsertMode(); };
             this.btn_save.MouseDown += SaveChanges;
             this.btn_view.MouseDown += ViewFile;
+            this.txt_keywords.KeyUp += Txt_keywords_KeyDown;
 
             // initial setup
             this.SetInsertMode();
@@ -179,8 +180,8 @@ namespace Zekri_Tool.Windows
                 if (IsEmpty(txt_title) || IsEmpty(txt_subtitle) || IsEmpty(txt_description) || IsEmpty(txt_keywords))
                     throw new Exception("All fields are required!");
 
-                if (GetRTBText(txt_keywords).Split(',').Length < 7)
-                    throw new Exception("A product should have at least 7 keywords!");
+                if (GetRTBText(txt_keywords).Split(',').Length == 0)
+                    throw new Exception("A product should have at least 1 keyword!");
 
                 Product demo = new Product();
                 demo.Title = txt_title.Text;
@@ -219,6 +220,8 @@ namespace Zekri_Tool.Windows
                 txt_subtitle.Text = SelectedProduct.SubTitle;
                 SetRTBText(txt_description, SelectedProduct.Description.Content);
                 SetRTBText(txt_keywords, SelectedProduct.Keywords);
+
+                this.UpdateKeywordCounter();
 
                 this.btn_delete.SetEnabled(true);
                 this.btn_cancel.SetEnabled(true);
@@ -280,6 +283,24 @@ namespace Zekri_Tool.Windows
         {
             if (File.Exists(this.filePath))
                 this.fileHandler.Show();
+        }
+
+        public void UpdateKeywordCounter()
+        {
+            string[] keywords = GetRTBText(txt_keywords).Split(',');
+
+            int count = keywords.Length;
+
+            if (keywords[count - 1] == "")
+                count--;
+
+            lbl_kwcount.Content = "Keyword Count: " + (GetRTBText(txt_keywords).Length == 0 ? 0 : count);
+            lbl_kwcount.Foreground = TryFindResource(GetRTBText(txt_keywords).Length == 0 ? "clr_danger" : "clr_main") as SolidColorBrush;
+        }
+
+        private void Txt_keywords_KeyDown(object sender, KeyEventArgs e)
+        {
+            UpdateKeywordCounter();
         }
     }
 }
