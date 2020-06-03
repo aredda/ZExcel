@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zekri-Tool", "Zekri-Tool\Zekri-Tool.csproj", "{D3B1DB0F-CE9D-4E41-9650-596E13CF0ADC}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ZExcel Installer", "ZExcel Installer\ZExcel Installer.vdproj", "{F0BA30DD-9DB5-4AAB-B650-3294A0046813}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3B1DB0F-CE9D-4E41-9650-596E13CF0ADC}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{D3B1DB0F-CE9D-4E41-9650-596E13CF0ADC}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{D3B1DB0F-CE9D-4E41-9650-596E13CF0ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3B1DB0F-CE9D-4E41-9650-596E13CF0ADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0BA30DD-9DB5-4AAB-B650-3294A0046813}.Debug|Any CPU.ActiveCfg = Debug
+		{F0BA30DD-9DB5-4AAB-B650-3294A0046813}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90E33945-772A-421D-9D76-DC0150D1E5A0}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,32 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zekri_Tool"
+        xmlns:Components="clr-namespace:Zekri_Tool.Components" x:Class="Zekri_Tool.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="768" Width="1024">
+    <DockPanel Width="auto" LastChildFill="True">
+        <Components:Header DockPanel.Dock="Top" Height="75" />
+        <DockPanel DockPanel.Dock="Bottom">
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                <Components:CustomButton x:Name="btn_open" IconSize="40" Margin="20" Icon="{StaticResource img_open}" Text="Open an existing file" BackColor="{StaticResource grd_main}" TextFontSize="15" />
+                <Components:CustomButton x:Name="btn_create" IconSize="40" Margin="0, 20, 20, 20" Icon="{StaticResource img_add}" Text="Create a new file" BackColor="{StaticResource grd_secondary}" TextFontSize="15" />
+            </StackPanel>
+            <Label x:Name="lbl_header" Content="Recent Opened Files:" DockPanel.Dock="Top" Margin="20, 0, 0, 5" FontSize="20" FontWeight="Light"></Label>
+            <ScrollViewer x:Name="sv_container" DockPanel.Dock="Bottom" Margin="20, 0, 20, 0" Padding="0, 0, 10, 0">
+                <StackPanel Name="stpnl_log" CanVerticallyScroll="True" Width="auto" Height="auto">
+                    <Components:LogListItem />
+                    <Components:LogListItem />
+                    <Components:LogListItem />
+                    <Components:LogListItem />
+                    <Components:LogListItem />
+                    <Components:LogListItem />
+                    <Components:LogListItem />
+                    <Components:LogListItem />
+                </StackPanel>
+            </ScrollViewer>
+        </DockPanel>
+    </DockPanel>
+</Window>
